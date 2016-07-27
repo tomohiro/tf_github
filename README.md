@@ -13,6 +13,7 @@ module "github" {
 
   admins  = "alan"
   members = "john,jane"
+  teams   = "red,blue"
 }
 ```
 
@@ -22,6 +23,7 @@ Module Input Variables
 
 - `admins` - comma separated lists of admin of a GitHub organization
 - `members` - comma separated lists of member of a GitHub organization
+- `teams` - comma separated lists of team of a GitHub organization
 
 
 Outputs
