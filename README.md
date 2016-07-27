@@ -7,7 +7,7 @@ A Terraform module for managing team and member of GitHub organization.
 Usage
 --------------------------------------------------------------------------------
 
-```
+```js
 module "github" {
   source = "github.com/Tomohiro/tf_github"
 
