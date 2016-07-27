@@ -1,7 +1,7 @@
 tf_github
 ================================================================================
 
-A Terraform module for managing team and member of GitHub organization.
+A Terraform module for managing teams and members of GitHub organization.
 
 
 Usage
