@@ -11,6 +11,7 @@ Usage
 module "github" {
   source = "github.com/Tomohiro/tf_github"
 
+  admins  = "alan"
   members = "john,jane"
 }
 ```
@@ -19,7 +20,8 @@ module "github" {
 Module Input Variables
 --------------------------------------------------------------------------------
 
-- `members` - comma separated lists of GitHub accounts
+- `admins` - comma separated lists of admin of a GitHub organization
+- `members` - comma separated lists of member of a GitHub organization
 
 
 Outputs
