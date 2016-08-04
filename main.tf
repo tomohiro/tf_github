@@ -1,16 +1,25 @@
 resource "github_membership" "membership_for_admins" {
-  username = "${element(split(",", var.admins), count.index)}"
+  count    = "${length(var.admins)}"
+  username = "${var.admins[count.index]}"
   role     = "admin"
-  count    = "${length(compact(split(",", var.admins)))}"
 }
 
 resource "github_membership" "membership_for_members" {
-  username = "${element(split(",", var.members), count.index)}"
+  count    = "${length(var.members)}"
+  username = "${var.members[count.index]}"
   role     = "member"
-  count    = "${length(compact(split(",", var.members)))}"
 }
 
-resource "github_team" "teams" {
-  name  = "${element(split(",", var.teams), count.index)}"
-  count = "${length(compact(split(",", var.teams)))}"
+resource "github_team" "secret_teams" {
+  count       = "${length(var.secret_teams)}"
+  name        = "${element(keys(var.secret_teams), count.index)}"
+  description = "${lookup(var.secret_teams, element(keys(var.secret_teams), count.index))}"
+  privacy     = "secret"
+}
+
+resource "github_team" "closed_teams" {
+  count       = "${length(var.closed_teams)}"
+  name        = "${element(keys(var.closed_teams), count.index)}"
+  description = "${lookup(var.closed_teams, element(keys(var.closed_teams), count.index))}"
+  privacy     = "closed"
 }

@@ -1,14 +1,26 @@
-variables "admins" {
-  description = "comma separated lists of admin of a GitHub organization"
-  default = ""
+variable "admins" {
+  description = "List of admin of a GitHub organization"
+  type        = "list"
+  default     = []
 }
 
-variables "members" {
-  description = "comma separated lists of member of a GitHub organization"
-  default = ""
+variable "members" {
+  description = "List of member of a GitHub organization"
+  type        = "list"
+  default     = []
 }
 
-variables "teams" {
-  description = "comma separated lists of team of a GitHub organization"
-  default = ""
+variable "secret_teams" {
+  description = "List of secret team of a GitHub organization"
+  type        = "map"
+  default     = {
+    team_name = "A description of the team"
+  }
+}
+
+variable "closed_teams" {
+  description = "List of closed team of a GitHub organization"
+  default     = {
+    team_name = "A description of the team"
+  }
 }
