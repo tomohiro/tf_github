@@ -27,7 +27,7 @@ module "github" {
 
   closed_teams = {
     commiters    = "Core Committers"
-    contributors = "Contoributors"
+    contributors = "Contributors"
   }
 }
 ```
