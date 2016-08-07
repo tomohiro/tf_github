@@ -11,7 +11,7 @@ variable "members" {
 }
 
 variable "secret_teams" {
-  description = "List of secret team of a GitHub organization"
+  description = "Map of secret team of a GitHub organization"
   type        = "map"
   default     = {
     team_name = "A description of the team"
@@ -19,7 +19,8 @@ variable "secret_teams" {
 }
 
 variable "closed_teams" {
-  description = "List of closed team of a GitHub organization"
+  description = "Map of closed team of a GitHub organization"
+  type        = "map"
   default     = {
     team_name = "A description of the team"
   }
